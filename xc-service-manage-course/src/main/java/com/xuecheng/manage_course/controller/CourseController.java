@@ -5,6 +5,7 @@ import com.xuecheng.framework.domain.course.CourseBase;
 import com.xuecheng.framework.domain.course.CourseMarket;
 import com.xuecheng.framework.domain.course.Teachplan;
 import com.xuecheng.framework.domain.course.ext.CourseInfo;
+import com.xuecheng.framework.domain.course.ext.CourseView;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
 import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import com.xuecheng.framework.model.response.QueryResponseResult;
@@ -71,5 +72,11 @@ public class CourseController implements CourseControllerApi {
     @PostMapping("coursepic/add")
     public ResponseResult addCoursePic(@RequestParam("courseId") String courseId,@RequestParam("fileId") String fileId) {
         return courseService.save(courseId,fileId);
+    }
+
+    @Override
+    @GetMapping("/courseView/{courseId}")
+    public CourseView courseView(@PathVariable("courseId") String courseId) {
+        return courseService.getCourseView(courseId);
     }
 }

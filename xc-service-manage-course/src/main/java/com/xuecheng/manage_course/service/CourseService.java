@@ -7,6 +7,7 @@ import com.xuecheng.framework.domain.course.CourseMarket;
 import com.xuecheng.framework.domain.course.CoursePic;
 import com.xuecheng.framework.domain.course.Teachplan;
 import com.xuecheng.framework.domain.course.ext.CourseInfo;
+import com.xuecheng.framework.domain.course.ext.CourseView;
 import com.xuecheng.framework.domain.course.ext.TeachplanNode;
 import com.xuecheng.framework.domain.course.request.CourseListRequest;
 import com.xuecheng.framework.exception.ExceptionCast;
@@ -216,5 +217,25 @@ public class CourseService {
         coursePic.setPic(fileId);
         coursePicRepository.save(coursePic);
         return new ResponseResult(CommonCode.SUCCESS);
+    }
+
+    public CourseView getCourseView(String courseId) {
+        CourseView courseView = new CourseView();
+        Optional<CourseBase> baseOptional = courseBaseRepository.findById(courseId);
+        if (baseOptional.isPresent()){
+            courseView.setCourseBase(baseOptional.get());
+        }
+        Optional<CoursePic> picOptional = coursePicRepository.findById(courseId);
+        if (picOptional.isPresent()){
+            courseView.setCoursePic(picOptional.get());
+        }
+        Optional<CourseMarket> marketOptional = courseMarkerRepository.findById(courseId);
+        if (marketOptional.isPresent()){
+            courseView.setCourseMarket(marketOptional.get());
+        }
+        TeachplanNode teachplanNode = teachplanMapper.selectList(courseId);
+        courseView.setTeachplanNode(teachplanNode);
+
+        return courseView;
     }
 }
