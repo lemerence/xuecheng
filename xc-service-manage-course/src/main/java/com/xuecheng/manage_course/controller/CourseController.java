@@ -79,4 +79,10 @@ public class CourseController implements CourseControllerApi {
     public CourseView courseView(@PathVariable("courseId") String courseId) {
         return courseService.getCourseView(courseId);
     }
+
+    @Override
+    @GetMapping("/es/{id}")
+    public ResponseResult courseES(@PathVariable String id) {
+        return courseService.courseES(id);
+    }
 }

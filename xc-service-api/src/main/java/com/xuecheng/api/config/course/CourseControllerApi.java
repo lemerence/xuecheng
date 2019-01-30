@@ -42,4 +42,7 @@ public interface CourseControllerApi {
 
     @ApiOperation("课程视图查询")
     public CourseView courseView(String courseId);
+
+    @ApiOperation("导入课程到索引库")
+    public ResponseResult courseES(String id);
 }
