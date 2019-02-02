@@ -54,6 +54,6 @@ public class ExeceptionCatch {
     static {
         //定义异常类型所对应的错误代码
         builder.put(HttpMessageNotReadableException.class,CommonCode.INVALID_PARAM);
-
+        //builder.put(AccessDeniedException.class,CommonCode.UNAUTHORISE);
     }
 }

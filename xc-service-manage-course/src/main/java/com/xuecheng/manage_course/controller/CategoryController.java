@@ -1,6 +1,6 @@
 package com.xuecheng.manage_course.controller;
 
-import com.xuecheng.api.config.course.CategoryControllerApi;
+import com.xuecheng.api.course.CategoryControllerApi;
 import com.xuecheng.framework.domain.course.ext.CategoryNode;
 import com.xuecheng.manage_course.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;

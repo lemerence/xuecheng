@@ -1,6 +1,6 @@
 package com.xuecheng.filesystem.controller;
 
-import com.xuecheng.api.config.filesystem.FileSystemControllerApi;
+import com.xuecheng.api.filesystem.FileSystemControllerApi;
 import com.xuecheng.filesystem.service.FileSystemService;
 import com.xuecheng.framework.domain.filesystem.response.UploadFileResult;
 import org.springframework.beans.factory.annotation.Autowired;

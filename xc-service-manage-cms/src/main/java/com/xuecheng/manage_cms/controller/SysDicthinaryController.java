@@ -1,6 +1,6 @@
 package com.xuecheng.manage_cms.controller;
 
-import com.xuecheng.api.config.cms.SysDicthinaryControllerApi;
+import com.xuecheng.api.cms.SysDicthinaryControllerApi;
 import com.xuecheng.framework.domain.system.SysDictionary;
 import com.xuecheng.manage_cms.service.SysDicthinaryService;
 import org.springframework.beans.factory.annotation.Autowired;
